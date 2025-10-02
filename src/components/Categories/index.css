@@ -1,0 +1,24 @@
+.categories {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 20px;
+	margin: 40px 0;
+}
+
+.categories .category {
+	background-color: #000;
+	height: 400px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.categories .category:hover {
+	background: #007bffda;
+	transform: scale(0.98);
+}

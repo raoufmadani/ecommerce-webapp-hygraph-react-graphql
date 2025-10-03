@@ -35,6 +35,7 @@ const CategoryPage = () => {
 			setProducts(shoes);
 		};
 		fetchSneakers();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [category]);
 
 	return (

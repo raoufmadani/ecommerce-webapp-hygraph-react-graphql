@@ -10,7 +10,7 @@ const Categories = () => {
 
 	useEffect(()=>{
      const fetchCategories = async() =>{
-      const {categories} = await request(`https://us-west-2.cdn.hygraph.com/content/${apiKeyHygraph}/master`, 
+     const {categories} = await request(`https://us-west-2.cdn.hygraph.com/content/${apiKeyHygraph}/master`, 
 		`
          { 
             categories {
@@ -26,6 +26,7 @@ const Categories = () => {
 	  setCategories(categories);
 	 };
 	 fetchCategories();
+	 // eslint-disable-next-line react-hooks/exhaustive-deps
 	},[]);
 	
 	return (

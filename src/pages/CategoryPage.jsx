@@ -3,9 +3,10 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import { request } from 'graphql-request';
 
+const HYGRAPH_API_KEY = process.env.REACT_APP_HYGRAPH_API_KEY;
+
 const CategoryPage = () => {
 	const [products, setProducts] = useState([]);
-	const apiKeyHygraph = process.env.HYGRAPH_API_KEY;
 
 	const navigate = useNavigate();
 	const { category } = useParams();
@@ -13,7 +14,7 @@ const CategoryPage = () => {
 	useEffect(() => {
 		const fetchSneakers = async () => {
 			const { shoes } = await request(
-				`https://us-west-2.cdn.hygraph.com/content/${apiKeyHygraph}/master`,
+				`https://us-west-2.cdn.hygraph.com/content/${HYGRAPH_API_KEY}/master`,
 				`
 					{ 
 						shoes(where: {category: {slug: "${category}"}}, first: 50) {

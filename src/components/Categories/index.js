@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import request from 'graphql-request';
 import './index.css';
 
+const HYGRAPH_API_KEY = process.env.REACT_APP_HYGRAPH_API_KEY;
 
 const Categories = () => {
     const [categories, setCategories] = useState([]);
-	const apiKeyHygraph = process.env.HYGRAPH_API_KEY;
 
 	useEffect(()=>{
      const fetchCategories = async() =>{
-     const {categories} = await request(`https://us-west-2.cdn.hygraph.com/content/${apiKeyHygraph}/master`, 
+     const {categories} = await request(`https://us-west-2.cdn.hygraph.com/content/${HYGRAPH_API_KEY}/master`, 
 		`
          { 
             categories {

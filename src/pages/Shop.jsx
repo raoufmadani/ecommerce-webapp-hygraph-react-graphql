@@ -2,14 +2,14 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect} from 'react';
 import request from 'graphql-request';
 
+const HYGRAPH_API_KEY = process.env.REACT_APP_HYGRAPH_API_KEY;
 const Shop = () => {
 	const [products, setProducts] = useState([]);
     const navigate = useNavigate();
-	const apiKeyHygraph = process.env.HYGRAPH_API_KEY;
 
 	useEffect(()=> {
         const fetchSneakers = async ()=>{
-          const {shoes} = await request(`https://us-west-2.cdn.hygraph.com/content/${apiKeyHygraph}/master`,
+          const {shoes} = await request(`https://us-west-2.cdn.hygraph.com/content/${HYGRAPH_API_KEY}/master`,
 			`
          { 
             shoes(first: 50) {

@@ -3,16 +3,17 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { request } from 'graphql-request';
 import './index.css';
 
+const HYGRAPH_API_KEY = process.env.REACT_APP_HYGRAPH_API_KEY;
+
 const SingleProduct = () => {
 	const [product, setProduct] = useState(null);
-    const apiKeyHygraph = process.env.HYGRAPH_API_KEY;
 	const { slug, category } = useParams();
 	const navigate = useNavigate();
 
 	useEffect(()=>{
       const fetchProduct = async ()=>{
         const { shoe } = await request (
-          `https://us-west-2.cdn.hygraph.com/content/${apiKeyHygraph}/master`,
+          `https://us-west-2.cdn.hygraph.com/content/${HYGRAPH_API_KEY}/master`,
 			`
          { 
             shoe(where: {slug: "${slug}"}) {

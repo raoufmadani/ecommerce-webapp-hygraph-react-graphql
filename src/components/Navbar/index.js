@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import siteLogo from './../../assets/images/logo.png';
 
 
 import './index.css';
@@ -29,7 +30,7 @@ const Navbar = () => {
 				<div className="navbar-header">
 					<div className="navbar-logo">
 						<Link to="/">
-							SNEAKERS STORE
+						    <img src={siteLogo} width={150} height={73} alt='SNEAKERS STORE' />
 						</Link>
 					</div>
 					<div className="flex-icons">

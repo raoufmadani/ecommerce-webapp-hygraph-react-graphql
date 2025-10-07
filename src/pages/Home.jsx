@@ -49,7 +49,7 @@ const Home = () => {
 							<div className="product-content">
 								<div className="flex-row">
 									<Link to={`shop/${product.category.slug}/${product.slug}`}>
-										<h3>{product.name})</h3>
+										<h3>{product.name}</h3>
 									</Link>
 									<p className="price">${product.price}</p>
 								</div>
